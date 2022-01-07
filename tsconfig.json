@@ -21,7 +21,9 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "skipDefaultLibCheck": true, //while installing firebase
+    "skipLibCheck": true, //while installing firebase
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
