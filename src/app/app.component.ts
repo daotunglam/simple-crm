@@ -1,6 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +18,6 @@ export class AppComponent implements OnDestroy {
   constructor(
     changeDetectorRef: ChangeDetectorRef, 
     media: MediaMatcher,
-    firestore: AngularFirestore,
     ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
