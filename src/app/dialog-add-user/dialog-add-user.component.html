@@ -41,7 +41,7 @@
         </div>
     </div>
     <div mat-dialog-actions>
-        <button mat-button>Cancel</button>
+        <button mat-button (click)="dialogRef.close()">Cancel</button> <!--dialogRef.close() of Angular cancel the input value automaticaly-->
         <button mat-button (click)="saveUser()">Save</button>
     </div>
 
