@@ -21,13 +21,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms'; //using for [(ngModel)] to get value from inputfield
 
 //for firebase:
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+//for table:
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatNativeDateModule,
     FormsModule,
     MatProgressBarModule,
+    MatTableModule,
+    MatSortModule,
     //for firebase:
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
