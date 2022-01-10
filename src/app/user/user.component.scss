@@ -5,16 +5,44 @@
     z-index: 999;
 }
 
-table {
-    width: 100%;
+.mat-elevation-z8 {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 24px;
+    overflow-x: scroll;
 
-    .mat-row .mat-cell {
-        border-bottom: 1px solid transparent;
-        border-top: 1px solid transparent;
-        cursor: pointer;
-    }
+    table {
+        width: 100%;
+        min-width: 320px;
+        max-width: 1024px;
+        
+        .mat-row .mat-cell {
+            border-bottom: 1px solid transparent;
+            border-top: 1px solid transparent;
+            cursor: pointer;
+        }
+        
+        td{
+            max-width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            padding-right: 1rem;
+        }
 
-    .mat-row:hover .mat-cell {
-        border-color: currentColor;
+        .mat-row:hover .mat-cell {
+            border-color: currentColor;
+        }
     }
 }
+
+// hide scroll-bar:
+.mat-elevation-z8::-webkit-scrollbar {
+    display: none;
+}
+.mat-elevation-z8 {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+// hide scroll-bar.
