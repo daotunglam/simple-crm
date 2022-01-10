@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { identity } from 'rxjs';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 
 @Component({
@@ -20,9 +21,11 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.firestore
     .collection('users')
-    .valueChanges()
+    .valueChanges({idField: 'customIdName'})
     .subscribe((changes:any)=>{
       this.allUsers = changes;
+      console.log(this.allUsers);
+      
     })
   }
 
