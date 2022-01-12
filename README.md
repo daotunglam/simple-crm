@@ -39,6 +39,7 @@ I found the best set:
 For more details in this project:
 
 <code>
+
 .user-detail-container {
 
     //the best set I found to make the single table/card reponsive 👇:
@@ -64,6 +65,7 @@ For more details in this project:
     //the best set I found to make the single table/card reponsive 👆
 
 }
+
 </code>
 
 ## The questions I still have:
