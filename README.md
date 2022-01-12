@@ -38,7 +38,7 @@ I found the best set:
 
 For more details in this project:
 
-<code>
+```
 
 .user-detail-container {
 
@@ -66,7 +66,7 @@ For more details in this project:
 
 }
 
-</code>
+```
 
 ## The questions I still have:
 
