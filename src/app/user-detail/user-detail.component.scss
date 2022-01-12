@@ -13,5 +13,20 @@
 
     .user-detail {
         min-height: 200px;
+
+        .user-bgImg{
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        position: relative;
+        .pin-right-upper-corner{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     }
+
 }
+
+

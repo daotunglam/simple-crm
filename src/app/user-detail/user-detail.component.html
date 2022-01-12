@@ -1,7 +1,14 @@
 <div class="user-detail-container">
     <mat-card class="user-detail">
 
-        <img mat-card-image src="./assets/bgImg/hand-laptop-on-table.jpg">
+        <img mat-card-image class="user-bgImg" src="./assets/bgImg/hand-laptop-on-table.jpg">
+
+        <button mat-icon-button [matMenuTriggerFor]="userMenu" class="pin-right-upper-corner">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="editUserDetail()">Edit</button>
+        </mat-menu>
 
         <mat-card-header>
             <img mat-card-avatar src="./assets/profileImg/profile.png">

@@ -17,3 +17,15 @@ body {
 .full-width {
     width: 100%;
 }
+
+.dialog-container{
+    position: relative;
+
+    mat-progress-bar{
+        position: absolute;
+        top: -24px; /*24px is the automatical padding of dialog-add-user.component*/
+        left: -24px;
+        right: -24px;
+        width: calc(100% + 2*24px);
+    }
+}

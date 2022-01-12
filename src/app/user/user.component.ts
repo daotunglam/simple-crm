@@ -39,9 +39,5 @@ export class UserComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddUserComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
   }
 }

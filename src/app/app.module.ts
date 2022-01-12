@@ -35,6 +35,9 @@ import { MatSortModule } from '@angular/material/sort';
 
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { MatCardModule } from '@angular/material/card';
     DashboardComponent,
     UserComponent,
     DialogAddUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatSortModule,
     MatCardModule,
+    MatMenuModule,
     //for firebase:
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
