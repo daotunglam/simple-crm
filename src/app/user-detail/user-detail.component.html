@@ -1,1 +1,40 @@
-<p>user-detail works!</p>
+<div class="user-detail-container">
+    <mat-card class="user-detail">
+
+        <img mat-card-image src="./assets/bgImg/hand-laptop-on-table.jpg">
+
+        <mat-card-header>
+            <img mat-card-avatar src="./assets/profileImg/profile.png">
+            <mat-card-title> {{user.firstName}} {{user.lastName}}</mat-card-title>
+            <mat-card-subtitle>{{user.city}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-divider [inset]="true"></mat-divider>
+
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item class="name">
+                    <mat-icon matListIcon>person</mat-icon>
+                    <div matLine>
+                        {{user.lastName}}
+                    </div>
+                    <div matLine>
+                        {{user.firstName}}
+                    </div>
+                </mat-list-item>
+
+                <mat-list-item class="birthDate">
+                    <mat-icon matListIcon>cake</mat-icon>
+                    <div matLine>{{birthday}}</div>
+                </mat-list-item>
+
+                <mat-list-item class="address">
+                    <mat-icon matListIcon>location_on</mat-icon>
+                    <div matLine> {{user.street}} </div>
+                    <div matLine> {{user.zipCode}} {{user.city}} </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+
+    </mat-card>
+</div>

@@ -28,6 +28,32 @@ In order to choose all current changes from local, I have to give this command:
 
 before git-push all again.
 
+### In order to keep a single div in the middle of the display and responsive
+
+I found the best set:
+
+1. let thisdivable/card in a container <code>.container{ padding: 1rem }</code>
+2. let this div in the middle of container with <code>margin: auto;</code>
+3. set the width of this div to be responsive (width, min-width, max-width)
+
+For more details in this project:
+
+<code>
+.user-detail-container {
+    //the best set I found to make the single table/card reponsive 👇:
+    padding: 1rem; //makes a small distance between the table/card and the browsers edge
+    .user-detail {
+        min-width: calc(
+            280px - 2rem
+        ); //keeps the card/table being not too small in the small devices. Change the size-value as your needs to keep the content inside card/table looking best.
+        width: calc(100% - 2rem);
+        max-width: 1024px; //optional. To keep the card/table not to be so big in the giant-devices.
+        margin: auto; //keeps the card/table in the middle horizontally.
+    }
+    //the best set I found to make the single table/card reponsive 👆
+}
+</code>
+
 ## The questions I still have:
 
 0.

@@ -5,29 +5,29 @@
     z-index: 999;
 }
 
-.mat-elevation-z8 {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 24px;
+.table-container {
     overflow-x: scroll;
 
-    table {
-        width: 100%;
-        min-width: 320px;
+    //the best set I found to make the single table/card reponsive 👇:
+    padding: 1rem;
+    .mat-elevation-z8 {
+        min-width: calc(280px - 2rem);
+        width: calc(100% - 2rem);
         max-width: 1024px;
-        
+        margin: auto;
+        //the best set I found to make the single table/card reponsive 👆
+
         .mat-row .mat-cell {
             border-bottom: 1px solid transparent;
             border-top: 1px solid transparent;
             cursor: pointer;
         }
-        
-        td{
+
+        td {
             max-width: 120px;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow:ellipsis;
+            text-overflow: ellipsis;
             padding-right: 1rem;
         }
 
@@ -38,10 +38,10 @@
 }
 
 // hide scroll-bar:
-.mat-elevation-z8::-webkit-scrollbar {
+.table-container::-webkit-scrollbar {
     display: none;
 }
-.mat-elevation-z8 {
+.table-container {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }

@@ -34,6 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatProgressBarModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
     //for firebase:
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
