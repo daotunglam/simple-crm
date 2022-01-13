@@ -11,7 +11,7 @@ import { User } from 'src/models/user.class';
 export class DialogEditUserComponent implements OnInit {
 
   userId!: string;
-  user!: User;
+  user: User = new User(); // to fix this error on ng test: TypeError: Cannot read properties of undefined (read 'firstName')
   birthDate!: Date;
   loading = false;
 

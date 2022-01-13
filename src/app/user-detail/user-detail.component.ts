@@ -16,12 +16,12 @@ export class UserDetailComponent implements OnInit {
   userId: any;
   user: User = new User(); //altanative: user: any = {}; 
   birthday: any;
-  
+
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private firestore: AngularFirestore,
     public dialog: MatDialog,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.getIdFromRoute()
@@ -35,14 +35,18 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUserFromFirebaseById() {
-    this.firestore
-    .collection('users')
-    .doc(this.userId)
-    .valueChanges()
-    .subscribe(user=>{
-      this.user = new User(user); //altanative: this.user = user;
-      this.birthdateToDateForm();
-    })
+    if (this.userId) {
+      this.firestore
+        .collection('users')
+        .doc(this.userId)
+        .valueChanges()
+        .subscribe(user => {
+          this.user = new User(user); //altanative: this.user = user;
+          this.birthdateToDateForm();
+        })
+    }else{
+      //throw ERROR
+    }
   }
 
   birthdateToDateForm() {
@@ -50,8 +54,8 @@ export class UserDetailComponent implements OnInit {
     this.birthday = d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear();
   }
 
-  editUserDetail(){
-    
+  editUserDetail() {
+
     const dialogRef = this.dialog.open(DialogEditUserComponent); //open the dialog-edit-user and at the same time assign it the name 'dialogRef'
 
     //IMPORTANT:
@@ -60,11 +64,11 @@ export class UserDetailComponent implements OnInit {
     // otherwise when we just write: 'dialogRef.componentInstance.user = this.user',
     // and any detail is changed,
     // the render of user-detail-component will be changed with even by canceling dialog-edit.
-    
+
     // new User(this.user.toJSON()) I don't see the sence of toJSON() here.
 
     dialogRef.componentInstance.userId = this.userId;
-    
+
   }
 
 }
