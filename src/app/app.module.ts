@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -37,6 +38,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { DialogAddChannelComponent } from './dialog-add-channel/dialog-add-channel.component';
+import { ChannelComponent } from './channel/channel.component';
 
 
 @NgModule({
@@ -46,9 +50,13 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    SidebarComponent,
+    DialogAddChannelComponent,
+    ChannelComponent,
   ],
   imports: [
+    MatTreeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

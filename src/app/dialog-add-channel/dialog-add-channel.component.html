@@ -1,0 +1,16 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+<h1 mat-dialog-title>ADD CHANNEL</h1>
+
+<div mat-dialog-content>
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Channel Name</mat-label>
+        <input [disabled]="loading" [(ngModel)]="channel.name" matInput>
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <!--dialogRef.close() of Angular cancel the input value automaticaly-->
+    <button mat-button (click)="saveChannel()">Save</button>
+</div>

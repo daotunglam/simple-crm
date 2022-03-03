@@ -25,6 +25,6 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]=[row.customIdName]></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]=[row.customIdName] class="highlightByHover"></tr>
     </table>
 </div>

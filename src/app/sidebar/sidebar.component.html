@@ -1,0 +1,44 @@
+<mat-nav-list id="sidebar">
+
+    <mat-list-item routerLink="/">
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <div matLine class="item">
+            Dashboard
+        </div>
+    </mat-list-item>
+
+    <mat-list-item routerLink="/user">
+        <mat-icon matListIcon>people</mat-icon>
+        <div matLine class="item">
+            Users
+        </div>
+    </mat-list-item>
+
+    <mat-tree  #treeSelector [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node class="highlightByHover" *matTreeNodeDef="let node" matTreeNodePadding>
+            <!-- <button mat-icon-button disabled></button> -->
+            <div>
+                {{node.name}}
+            </div>
+        </mat-tree-node>
+
+        <mat-tree-node class="highlightByHover showTools" *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+            </button>
+
+            <div class="w-100 hstack gap-3">
+                {{node.name}}
+
+                <div class="tools ms-auto">
+                    <button mat-icon-button (click)="openDialog()">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </mat-tree-node>
+    </mat-tree>
+</mat-nav-list>

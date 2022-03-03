@@ -1,0 +1,12 @@
+mat-expansion-panel{
+    margin-top: 0.3rem;
+}
+
+.showTools{
+    .tools{
+        visibility:hidden;
+    }
+    &:hover .tools{
+        visibility: visible;
+    }
+}

@@ -1,57 +1,21 @@
-<!-- <mat-drawer-container class="mat-drawer-container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <div class="logo-container">
-      LOGO
-    </div>
-    <ul class="sidenav-content">
-      <li class="dashboard">
-        <mat-icon class="material-icons-outlined">dashboard</mat-icon>
-        Dashboard
-      </li>
-      <li class="user">
-        <mat-icon class="material-icons-outlined">people</mat-icon>
-        Users
-      </li>
-    </ul>
-  </mat-drawer>
-
-  <mat-toolbar color="primary">
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Simple CRM</span>
-  </mat-toolbar>
-</mat-drawer-container> -->
-
-<div class="container" [class.is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="toolbar">
+<div [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="toolbar sticky-top">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="app-name">Simple CRM</h1>
+    <h1 class="app-name">Slack Fake</h1>
+    <!-- <h1 class="app-name">Simple CRM</h1> -->
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
-      <mat-nav-list>
-        <a mat-list-item routerLink="/">
-          <mat-icon class="material-icons-outlined">dashboard</mat-icon>
-          <div class="item">
-            Dashboard
-          </div>
-        </a>
-        <a mat-list-item routerLink="/user">
-          <mat-icon class="material-icons-outlined">people</mat-icon>
-          <div class="item">
-            Users
-          </div>
-        </a>
-      </mat-nav-list>
+      <app-sidebar></app-sidebar>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
 </div>
